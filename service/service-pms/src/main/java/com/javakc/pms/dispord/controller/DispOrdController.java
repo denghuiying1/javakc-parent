@@ -3,6 +3,7 @@ package com.javakc.pms.dispord.controller;
 import com.alibaba.excel.EasyExcel;
 import com.javakc.commonutils.api.APICODE;
 import com.javakc.pms.dispord.entity.DispOrd;
+import com.javakc.pms.dispord.listener.ExcelListener;
 import com.javakc.pms.dispord.service.DispOrdService;
 import com.javakc.pms.dispord.vo.DispOrdData;
 import com.javakc.pms.dispord.vo.DispOrdQuery;
@@ -12,6 +13,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -78,7 +80,7 @@ public class DispOrdController {
 
     @ApiOperation(value = "导出Excel",notes = "使用Alibaba的EasyExcel进行数据的导出")
     @GetMapping("exportEasyExcel")
-    public APICODE exportEasyExcel (HttpServletResponse response) {
+    public void exportEasyExcel (HttpServletResponse response) {
         // ## 查询数据
         List<DispOrd> list = dispOrdService.findAll();
 
@@ -109,7 +111,28 @@ public class DispOrdController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
     }
 
+    // ## 导入
+    @ApiOperation(value = "导入Excel",notes = "使用Alibaba的EasyExcel进行数据的导入")
+    @PostMapping("importEasyExcel")
+    public void importEasyExcel(MultipartFile file) {
+        try {
+            EasyExcel.read(file.getInputStream(),DispOrdData.class,new ExcelListener(dispOrdService)).sheet().doRead();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @ApiOperation(value = "导出Excel",notes = "使用Apache的POI进行数据的导出")
+    @GetMapping("exportExcel")
+    public void exportExcel(HttpServletResponse response) {
+        dispOrdService.exportExcel(response);
+    }
+
+    @ApiOperation(value = "导出Excel",notes = "使用Apache的POI进行数据的导出")
+    @PostMapping("importExcel")
+    public void importExcel(MultipartFile file) {
+        dispOrdService.importExcel(file);
+    }
 }
