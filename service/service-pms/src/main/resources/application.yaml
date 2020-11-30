@@ -35,3 +35,7 @@ spring:
     time-zone: GMT+8
   jpa:
     show-sql: true # 展示 sql 语句
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848   # nacos 服务地址
