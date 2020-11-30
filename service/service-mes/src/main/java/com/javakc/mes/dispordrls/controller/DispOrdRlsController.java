@@ -1,9 +1,10 @@
-package com.javakc.pms.dispord.controller;
+package com.javakc.mes.dispordrls.controller;
 
 import com.javakc.mes.commonutils.api.APICODE;
-import com.javakc.pms.dispord.entity.DispOrdRls;
-import com.javakc.pms.dispord.service.DispOrdRlsService;
-import com.javakc.pms.dispord.vo.DispOrdRlsQuery;
+
+import com.javakc.mes.dispordrls.entity.DispOrdRls;
+import com.javakc.mes.dispordrls.service.DispOrdRlsService;
+import com.javakc.mes.dispordrls.vo.DispOrdRlsQuery;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

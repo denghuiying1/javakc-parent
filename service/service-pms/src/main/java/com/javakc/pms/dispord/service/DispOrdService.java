@@ -1,7 +1,7 @@
 package com.javakc.pms.dispord.service;
 
-import com.javakc.commonutils.jpa.base.service.BaseService;
-import com.javakc.commonutils.jpa.dynamic.SimpleSpecificationBuilder;
+import com.javakc.mes.commonutils.jpa.base.service.BaseService;
+import com.javakc.mes.commonutils.jpa.dynamic.SimpleSpecificationBuilder;
 import com.javakc.pms.dispord.dao.DispOrdDao;
 import com.javakc.pms.dispord.entity.DispOrd;
 import com.javakc.pms.dispord.vo.DispOrdQuery;
@@ -19,7 +19,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
-import sun.management.snmp.jvminstr.JvmOSImpl;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -31,7 +30,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class DispOrdService extends BaseService<DispOrdDao,DispOrd> {
+public class DispOrdService extends BaseService<DispOrdDao, DispOrd> {
 
     @Autowired
     private DispOrdDao dispOrdDao;
@@ -49,7 +48,7 @@ public class DispOrdService extends BaseService<DispOrdDao,DispOrd> {
      * @param pageSize
      * @return page
      */
-    public Page<DispOrd> findPageDispOrd(DispOrdQuery dispOrdQuery,int pageNum,int pageSize) {
+    public Page<DispOrd> findPageDispOrd(DispOrdQuery dispOrdQuery, int pageNum, int pageSize) {
         SimpleSpecificationBuilder<DispOrd> simpleSpecificationBuilder = new SimpleSpecificationBuilder<>();
         if (!StringUtils.isEmpty(dispOrdQuery.getOrderName())){
             /**

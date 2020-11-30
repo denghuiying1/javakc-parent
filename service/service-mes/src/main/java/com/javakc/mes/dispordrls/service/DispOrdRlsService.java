@@ -1,10 +1,11 @@
-package com.javakc.pms.dispord.service;
+package com.javakc.mes.dispordrls.service;
 
 import com.javakc.mes.commonutils.jpa.base.service.BaseService;
 import com.javakc.mes.commonutils.jpa.dynamic.SimpleSpecificationBuilder;
-import com.javakc.pms.dispord.vo.DispOrdRlsQuery;
-import com.javakc.pms.dispord.dao.DispOrdRlsDao;
-import com.javakc.pms.dispord.entity.DispOrdRls;
+import com.javakc.mes.dispordrls.dao.DispOrdRlsDao;
+
+import com.javakc.mes.dispordrls.entity.DispOrdRls;
+import com.javakc.mes.dispordrls.vo.DispOrdRlsQuery;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
