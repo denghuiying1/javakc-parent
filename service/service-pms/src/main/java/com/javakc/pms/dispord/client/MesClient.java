@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "service-mes")
+@FeignClient(name = "service-mes",fallback = MesFeignClient.class)
 @Component
 public interface MesClient {
 

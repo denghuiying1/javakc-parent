@@ -1,4 +1,4 @@
-package com.javakc.servicebase.hanler;
+package com.javakc.mes.servicebase.hanler;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

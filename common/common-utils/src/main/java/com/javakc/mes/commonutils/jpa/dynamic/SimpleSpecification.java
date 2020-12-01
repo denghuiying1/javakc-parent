@@ -1,4 +1,4 @@
-package com.javakc.commonutils.jpa.dynamic;
+package com.javakc.mes.commonutils.jpa.dynamic;
 
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.StringUtils;

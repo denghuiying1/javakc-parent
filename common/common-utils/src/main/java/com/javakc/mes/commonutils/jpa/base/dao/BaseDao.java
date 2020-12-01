@@ -1,4 +1,4 @@
-package com.javakc.commonutils.jpa.base.dao;
+package com.javakc.mes.commonutils.jpa.base.dao;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

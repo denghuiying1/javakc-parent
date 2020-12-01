@@ -1,4 +1,4 @@
-package com.javakc.commonutils.api;
+package com.javakc.mes.commonutils.api;
 
 /**
  *  公共错误码

@@ -1,6 +1,6 @@
-package com.javakc.servicebase.hanler;
+package com.javakc.mes.servicebase.hanler;
 
-import com.javakc.commonutils.api.APICODE;
+import com.javakc.mes.commonutils.api.APICODE;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

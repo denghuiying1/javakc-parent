@@ -1,6 +1,6 @@
-package com.javakc.commonutils.jpa.base.service;
+package com.javakc.mes.commonutils.jpa.base.service;
 
-import com.javakc.commonutils.jpa.base.dao.BaseDao;
+import com.javakc.mes.commonutils.jpa.base.dao.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.transaction.annotation.Transactional;

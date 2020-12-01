@@ -10,13 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
  * 调用指令管理
  */
 @RestController
-@RequestMapping("/pms/dispordrls")
+@RequestMapping("/mes/dispordrls")
 @CrossOrigin
 public class DispOrdRlsController {
 
@@ -37,5 +38,12 @@ public class DispOrdRlsController {
     public APICODE view(@PathVariable("dispOrdRlsId") String dispOrdRlsId) {
         DispOrdRls dispOrdRls = dispOrdRlsService.getById(dispOrdRlsId);
         return APICODE.OK().data("dispOrdRls",dispOrdRls);
+    }
+
+    @ApiOperation("接受集团下达的指令信息")
+    @PostMapping("savePmsDispOrdRls")
+    public APICODE savePmsDispOrdRls(@RequestBody DispOrdRls dispOrdRls) {
+        dispOrdRlsService.saveOrUpdate(dispOrdRls);
+        return APICODE.OK();
     }
 }
