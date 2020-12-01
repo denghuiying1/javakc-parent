@@ -18,7 +18,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/mes/dispordrls")
-@CrossOrigin
+//@CrossOrigin
 public class DispOrdRlsController {
 
     @Autowired

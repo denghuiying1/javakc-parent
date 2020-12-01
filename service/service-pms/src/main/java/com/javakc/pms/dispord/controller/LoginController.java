@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/pms/user")
-@CrossOrigin
+//@CrossOrigin
 public class LoginController {
 
     @PostMapping("login")
